@@ -40,7 +40,7 @@ function listLaborers() {
         url: 'laborer/getLaborers.jsp',                  
         dataType: 'json',
         success: data => {
-        	laborers = data.laborers        	
+        	let laborers = data.laborers        	
         	
         	if(laborers.length) {
         		const laborerArr = []
