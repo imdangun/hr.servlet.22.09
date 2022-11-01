@@ -9,34 +9,32 @@
 %>
 <%
 	List<Laborer> laborers = laborerService.getLaborers();
-	String json = "{\"laborers\":[";
+	String json = "[";
 	for(Laborer laborer: laborers) {
 		json += "{\"laborerId\":" + laborer.getLaborerId() + ",";
-		json += "\"name\":\"" + laborer.getName() + "\",";
+		json += "\"name\":\"" + laborer.getLaborerName() + "\",";
 		json += "\"hireDate\":\"" + laborer.getHireDate() + "\"},";
 	}
-	json += "]}";
+	json += "]";
 	json = json.replaceAll("},]", "}]");
 %>
 <%= json %>
 <%--
-{
-	"laborers" : [
-		{
-			"laborerId": 1,
-			"name": "최한석",
-			"hireDate": "2022/09/21"		
-		},
-		{
-			"laborerId": 2,
-			"name": "한아름",
-			"hireDate": "2022/10/21"		
-		},
-		{
-			"laborerId": 3,
-			"name": "양승일",
-			"hireDate": "2022/10/27"		
-		}
-	]
-}
+[
+    {
+        "laborerId": 1,
+        "name": "최한석",
+        "hireDate": "2022-10-05"
+    },
+    {
+        "laborerId": 24,
+        "name": "한아름",
+        "hireDate": "2022-11-11"
+    },
+    {
+        "laborerId": 25,
+        "name": "양승일",
+        "hireDate": "2022-11-03"
+    }
+]
 --%>

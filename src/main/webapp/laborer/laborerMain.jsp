@@ -9,10 +9,6 @@
 <link rel='stylesheet' href='http://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'/>
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'/>
 <script>
-/*
-const laborers = []
-let laborerId = 0
-*/
 function isVal(field) {
     let isGood = false
     let errMsg
@@ -39,9 +35,7 @@ function listLaborers() {
     $.ajax({
         url: 'laborer/getLaborers.jsp',                  
         dataType: 'json',
-        success: data => {
-        	let laborers = data.laborers        	
-        	
+        success: laborers => {        	
         	if(laborers.length) {
         		const laborerArr = []
         	 	$.each(laborers, (i, laborer) => {        	 		
@@ -88,7 +82,7 @@ function init() {
             isVal($('#laborerName')) && isVal($('#hireDate'))) {        	
             let laborer = {
                 laborerId: $('#laborerId:checked').val(), 
-                name: $('#laborerName').val(),
+                laborerName: $('#laborerName').val(),
                 hireDate: $('#hireDate').val()
             }
             

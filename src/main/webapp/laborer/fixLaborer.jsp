@@ -9,11 +9,11 @@
 %>
 <%	
 	String laborerId = request.getParameter("laborerId");
-	String name = request.getParameter("name");
+	String laborerName = request.getParameter("laborerName");
 	String hireDate = request.getParameter("hireDate");	
 	
 	laborerService.fixLaborer(new Laborer(
 			Integer.parseInt(laborerId),
-			name, 
+			laborerName, 
 			LocalDate.parse(hireDate, DateTimeFormatter.ISO_DATE)));		
 %>

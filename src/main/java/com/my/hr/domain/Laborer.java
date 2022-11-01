@@ -4,12 +4,12 @@ import java.time.LocalDate;
 
 public class Laborer {
 	private int laborerId;
-	private String name;
+	private String laborerName;
 	private LocalDate hireDate;
 	
-	public Laborer(int laborerId, String name, LocalDate hireDate) {
+	public Laborer(int laborerId, String laborerName, LocalDate hireDate) {
 		this.laborerId = laborerId;
-		this.name = name;
+		this.laborerName = laborerName;
 		this.hireDate = hireDate;
 	}
 
@@ -17,8 +17,8 @@ public class Laborer {
 		return laborerId;
 	}
 
-	public String getName() {
-		return name;
+	public String getLaborerName() {
+		return laborerName;
 	}
 
 	public LocalDate getHireDate() {
@@ -29,8 +29,8 @@ public class Laborer {
 		this.laborerId = laborerId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLaborerName(String laborerName) {
+		this.laborerName = laborerName;
 	}
 
 	public void setHireDate(LocalDate hireDate) {
@@ -39,6 +39,6 @@ public class Laborer {
 	
 	@Override
 	public String toString() {
-		return String.format("%2d %-5s %s", laborerId, name, hireDate);
+		return String.format("%2d %-5s %s", laborerId, laborerName, hireDate);
 	}
 }
